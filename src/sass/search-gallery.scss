@@ -3,6 +3,7 @@
 }
 img {
     display: block;
+    margin: 0 auto;
 }
 .form-container {
     display: flex;
@@ -60,10 +61,10 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-        
-        margin-left: -20px;
+    margin-left: -20px;
 }
 .photo-card {
+    border: 1px solid #EEEEEE;;
     flex-basis: calc((100% - 80px) / 4);
         margin-top: 20px;
         margin-left: 20px;
@@ -74,5 +75,15 @@ img {
     
 }
 .info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50px;
 
+}
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 5px;
 }

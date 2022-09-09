@@ -1,26 +1,43 @@
+import Notiflix from 'notiflix'
 const axios = require('axios').default;
+const APIKEY = "17553601-11a77715f3e073a989ba7d24f"
+const url = "https://pixabay.com/api/"
 export default class PixabayApiService {
   constructor() {
     this.searchQuery = ""
-    this.page = 1
+    this.page = 0 
+    this.photosShown = (this.page + 1)*40
     }
     
-    getImages() {
-    const API = "17553601-11a77715f3e073a989ba7d24f"
-    const url = "https://pixabay.com/api/"
+    async getImages() {
+    
     const params = {
     "q": `${this.searchQuery}`,
-    "key": API,
+    "key": APIKEY,
     "image_type": "photo",
     "orientation": "horizontal",
     "safe-search": true,
     "per_page": 40,
     "page":`${this.page}`  
     }
-     return axios(url, { params }).then(data => {
-       this.page +=1
-      return data.data.hits
-    })}
+      
+       try { const data = await axios(url, { params })
+       
+         
+         
+         
+         this.page += 1
+         
+  
+         return data.data
+        
+       } catch(err) {
+         console.log(err)
+    
+      }
+     
+  }
+  
   get query() {
       return this.searchQuery
   }
