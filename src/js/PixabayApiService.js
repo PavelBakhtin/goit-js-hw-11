@@ -1,4 +1,3 @@
-import Notiflix from 'notiflix'
 const axios = require('axios').default;
 const APIKEY = "17553601-11a77715f3e073a989ba7d24f"
 const url = "https://pixabay.com/api/"
@@ -6,7 +5,7 @@ export default class PixabayApiService {
   constructor() {
     this.searchQuery = ""
     this.page = 0 
-    this.photosShown = (this.page + 1)*40
+    this.photosToShow = 0
     }
     
     async getImages() {
@@ -22,19 +21,11 @@ export default class PixabayApiService {
     }
       
        try { const data = await axios(url, { params })
-       
-         
-         
-         
          this.page += 1
-         
-  
-         return data.data
-        
-       } catch(err) {
+           return data.data
+               } catch(err) {
          console.log(err)
-    
-      }
+          }
      
   }
   
@@ -47,8 +38,10 @@ export default class PixabayApiService {
   resetPage() {
     this.page = 1
   }
+  updatePhotosShown(totalHits){
+    this.photosToShow = totalHits - ((this.page-1)* 40)
+  }
 }
 
-//   
 
 

@@ -1,5 +1,8 @@
 .container{
-   max-width: 1400px;
+    padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+ max-width: 1600px;
 }
 img {
     display: block;
@@ -35,6 +38,41 @@ img {
     border: transparent;
     cursor: pointer;
 }
+
+.gallery {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.photo-card {
+    margin: 5px;
+    border: 1px solid #EEEEEE;;
+    flex-basis: 360px;
+       
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 50px;
+
+}
+p {
+    display: block;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding: 5px;
+}
+
 .d-none {
     display: none;
 }
@@ -55,35 +93,4 @@ img {
 }
 .button-container button:hover {
     background-color: rgb(18, 18, 228);
-}
-.gallery {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-left: -20px;
-}
-.photo-card {
-    border: 1px solid #EEEEEE;;
-    flex-basis: calc((100% - 80px) / 4);
-        margin-top: 20px;
-        margin-left: 20px;
-}
-.info {
-    display: flex;
-    justify-content: space-between;
-    
-}
-.info-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 50px;
-
-}
-p {
-    display: block;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    padding: 5px;
 }
